@@ -14,7 +14,7 @@ for n=1:length(randx)
 
     u=rand(1,22)>randx(n)
 
-    fprintf(fileID, '\n Iteration %d \nu= ',n);
+    fprintf(fileID, '\n Interpolation %d \nu= ',n);
     fprintf(fileID,'%d ',u);
 
     for i=1:length(tt)-1
@@ -36,9 +36,12 @@ for n=1:length(randx)
     filename=['irmaTS',num2str(randx(n)),'.png'];
     saveas(gcf,filename);
     
-    
+    auc_dat1=gp4_roc(n,out)
     auc_dat=roc_TSseries(M_sol,n)
     fprintf(fileID,'\nORDER \t\t\t AuC');
+    %fprintf(fileID,'AUC= ');
+    fprintf(fileID,'\n%s \t %f \n',num2str(n),auc_dat1);
+
     [nrows,ncols] = size(auc_dat);%print cell rows to file
     formatSpec =('\n%s \t %f \n');
     for row = 1:nrows
