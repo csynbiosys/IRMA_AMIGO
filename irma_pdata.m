@@ -1,8 +1,10 @@
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TITLE: AMIGO implementation of IRMA codes from
-%        %|          Code written by Gianfranco Fiore                     |
-%|                       gianfrancofiore@inwind.it                        | 
+% $Header: svn://172.19.32.13/trunk/AMIGO2R2016/Examples/Arabidopsis_circadian/circadian_sobs.m 2398 2015-12-04 07:06:07Z evabalso $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE: The circadian clock in Arabidopsis thaliana
+%
+%        Type :
+%                > help circadian_tutorial
+%        for a more detailed description of the model.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %       INPUT FILE TO GENERATE PSEUDO-EXPERIMENTAL DATA (USEFUL FOR
@@ -28,7 +30,7 @@
 %PATHS RELATED DATA
 %======================
 
-inputs.pathd.results_folder='irma_test';         % Folder to keep results (in Results) for a given problem          
+inputs.pathd.results_folder='irma_res';         % Folder to keep results (in Results) for a given problem          
 inputs.pathd.short_name='irma';                      % To identify figures and reports for a given problem   
 
 %======================
@@ -69,10 +71,10 @@ inputs.model.par=[0,0.0404324055000000,1,0.0356000000000000,0.0221812275000000,0
  inputs.exps.n_exp=2;                                  %Number of experiments                                                                            
  for iexp=1:inputs.exps.n_exp   
      inputs.exps.exp_y0{iexp}=[0.046735005043180 0.013409857422389 0.042059926621195 0.010943944574845 0.020445852394023];  %Initial conditions for each experiment          %Initial conditions for each experiment          
-     inputs.exps.t_f{iexp}=3000;                           %Experiments duration
+     inputs.exps.t_f{iexp}=3000; %-- change time to 2000                           %Experiments duration
 
     % OBSEVABLES DEFINITION ---OMITTING ---- 
-     inputs.exps.n_obs{iexp}=5;                      % Number of observed quantities per experiment  
+     inputs.exps.n_obs{iexp}=5; %--- changed 1 to 5                       % Number of observed quantities per experiment  
      inputs.exps.obs_names{iexp}=char('CBF1','GAL4','SWI5','GAL80','ASH1'); % --added observables    % Name of the observed quantities per experiment    
      inputs.exps.obs{iexp}=char('CBF1=cbf1','GAL4=gal4','SWI5=swi5','GAL80=gal80','ASH1=ash1');   % Observation function
  
@@ -81,14 +83,14 @@ inputs.model.par=[0,0.0404324055000000,1,0.0356000000000000,0.0221812275000000,0
  
  inputs.exps.u_interp{1}='sustained';                  %Stimuli definition for experiment 1:
                                                        %OPTIONS:u_interp: 'sustained' |'step'|'linear'(default)|'pulse-up'|'pulse-down' 
- inputs.exps.t_con{1}=[0 3000];                 % Input swithching times: Initial and final time    
+ inputs.exps.t_con{1}=[0 3000];%-- change time 1000 to 2000                 % Input swithching times: Initial and final time    
  inputs.exps.u{1}=[1];                                 % Values of the inputs 
  
  inputs.exps.u_interp{2}='pulse-down';                 %Stimuli definition for experiment 2
  inputs.exps.n_pulses{2}=5;                            %Number of pulses |-|_|-|_|-|_|-|_|-|_    
  inputs.exps.u_min{2}=0;
  inputs.exps.u_max{2}=1;        %Minimum and maximum value for the input
- inputs.exps.t_con{2}=[0 :300 : 3000];                  %Times of switching: Initial time, Intermediate times, Final time
+ inputs.exps.t_con{2}=[0 :300 : 3000];  %--add time                 %Times of switching: Initial time, Intermediate times, Final time
 
  
  %==================================

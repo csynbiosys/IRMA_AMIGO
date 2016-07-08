@@ -25,7 +25,7 @@
 % PATHS RELATED DATA
 %======================
 
-inputs.pathd.results_folder='irma_test';         % Folder to keep results (in Results) for a given problem          
+inputs.pathd.results_folder='irma_res';         % Folder to keep results (in Results) for a given problem          
 inputs.pathd.short_name='irma';                      % To identify figures and reports for a given problem   
 
 %======================
@@ -52,23 +52,26 @@ inputs.model.par=[0,0.0404324055000000,1,0.0356000000000000,0.0221812275000000,0
 % EXPERIMENTAL SCHEME RELATED DATA
 %==================================
 
- inputs.exps.n_exp=2;                                  %Number of experiments                                                                            
+ inputs.exps.n_exp=1; 
+ e2=1;
+ e1=2;
+ %Number of experiments                                                                            
  for iexp=1:inputs.exps.n_exp   
      inputs.exps.exp_y0{iexp}=[0.046735005043180 0.013409857422389 0.042059926621195 0.010943944574845 0.020445852394023];  %Initial conditions for each experiment          %Initial conditions for each experiment          
-     inputs.exps.t_f{iexp}=480;                          %Experiments duration
+     inputs.exps.t_f{iexp}=960;                          %Experiments duration
 
      
  end 
  
- inputs.exps.u_interp{1}='sustained';                  %Stimuli definition for experiment 1:
+ inputs.exps.u_interp{e1}='sustained';                  %Stimuli definition for experiment 1:
                                                        %OPTIONS:u_interp: 'sustained' |'step'|'linear'(default)|'pulse-up'|'pulse-down' 
- inputs.exps.t_con{1}=[0 480];%-- change time 1000 to 2000                 % Input swithching times: Initial and final time    
- inputs.exps.u{1}=[1];                                 % Values of the inputs 
+ inputs.exps.t_con{e1}=[0 480];%-- change time 1000 to 2000                 % Input swithching times: Initial and final time    
+ inputs.exps.u{e1}=[1];                                 % Values of the inputs 
  
- inputs.exps.u_interp{2}='pulse-down';                 %Stimuli definition for experiment 2
- inputs.exps.n_pulses{2}=2;                            %Number of pulses |-|_|-|_|-|_|-|_|-|_    
- inputs.exps.u_min{2}=0;
- inputs.exps.u_max{2}=1;        %Minimum and maximum value for the input
- inputs.exps.t_con{2}=[0 :120 : 480];            %Times of switching: Initial time, Intermediate times, Final time
+ inputs.exps.u_interp{e2}='pulse-down';                 %Stimuli definition for experiment 2
+ inputs.exps.n_pulses{e2}=4;                            %Number of pulses |-|_|-|_|-|_|-|_|-|_    
+ inputs.exps.u_min{e2}=0;
+ inputs.exps.u_max{e2}=1;        %Minimum and maximum value for the input
+ inputs.exps.t_con{e2}=[0 :120 : 960];            %Times of switching: Initial time, Intermediate times, Final time
                   
  

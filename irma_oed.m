@@ -38,7 +38,7 @@ inputs.model.par=[0,0.0404324055000000,1,0.0356000000000000,0.0221812275000000,0
 
 
 
- inputs.exps.n_exp=2;                                  %Number of experiments                                                                            
+ %inputs.exps.n_exp=2;                                  %Number of experiments                                                                            
  for iexp=1:inputs.exps.n_exp   
               
     % OBSEVABLES DEFINITION 
@@ -52,66 +52,76 @@ inputs.model.par=[0,0.0404324055000000,1,0.0356000000000000,0.0221812275000000,0
  
  inputs.exps.u_interp{1}='sustained';                  % Stimuli definition for experiment 1:
                                                        % OPTIONS:u_interp: 'sustained' |'step'|'linear'(default)|'pulse-up'|'pulse-down' 
- inputs.exps.t_f{1}=120;                               % Experiment duration
- inputs.exps.t_con{1}=[0 120];                         % Input swithching times: Initial and final time    
+ inputs.exps.t_f{1}=480;                               % Experiment duration
+ inputs.exps.t_con{1}=[0 480];                         % Input swithching times: Initial and final time    
  inputs.exps.u{1}=[1];                                 % Values of the inputs 
- inputs.exps.n_s{1}=15;                                % Number of sampling times for each experiment.
+ inputs.exps.n_s{1}=25;                                % Number of sampling times for each experiment.
  
-  inputs.exps.error_data{1}=[                            % Experimental noise, n_s{iexp}x n_obs{iexp}
-		0.037642  0.059832
-		0.072461  0.013999
-		0.002877  0.020809
-		0.050324  0.002705
-		0.042936  0.017832
-		0.044338  0.022538
-		0.016335  0.017981
-		0.164745  0.035301
-		0.010631  0.102381
-		0.127745  0.065791
-		0.081671  0.049568
-		0.126739  0.050306
-		0.006308  0.018894
-		0.054665  0.066953
-		0.082163  0.015295
+  inputs.exps.error_data{1}=[                                      % Experimental noise, n_s{iexp}x n_obs{iexp}
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
+		0.00233776  0.000670633  0.00210508  0.000547285  0.0010224
 		];
+  
  
  
  inputs.exps.u_interp{2}='pulse-down';                 % Stimuli definition for experiment 2
- inputs.exps.n_pulses{2}=5;                            % Number of pulses |-|_|-|_|-|_|-|_|-|_    
+ inputs.exps.n_pulses{2}=2;                            % Number of pulses |-|_|-|_|-|_|-|_|-|_    
  inputs.exps.u_min{2}=0;inputs.exps.u_max{2}=1;        % Minimum and maximum value for the input
- inputs.exps.t_f{2}=120;                               % Experiment duration
- inputs.exps.t_con{2}=[0 :12: 120];                    % Times of switching: Initial time, Intermediate times, Final time
+ inputs.exps.t_f{2}=480;                               % Experiment duration
+ inputs.exps.t_con{2}=[0 :120: 480];                    % Times of switching: Initial time, Intermediate times, Final time
  inputs.exps.n_s{2}=25;                                % Number of sampling times for each experiment.
  
   
 inputs.exps.error_data{2}=[
-		0.146016  0.018152
-		0.066547  0.045194
-		0.184009  0.101495
-		0.047431  0.030858
-		0.175280  0.033712
-		0.031945  0.048733
-		0.107148  0.008715
-		0.019847  0.072804
-		0.111892  0.001840
-		0.104932  0.058752
-		0.059721  0.033324
-		0.056537  0.000360
-		0.051815  0.037473
-		0.103393  0.028094
-		0.008084  0.012024
-		0.188444  0.022982
-		0.046354  0.031981
-		0.043436  0.003749
-		0.030177  0.042560
-		0.116245  0.110535
-		0.059345  0.025112
-		0.218587  0.000564
-		0.115783  0.043708
-		0.099239  0.002678
-		0.010644  0.052990
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
+		0.00254788  0.000684793  0.00210302  0.000547198  0.00102229
 		];
- 
  
  %{
  inputs.exps.u_interp{1}='sustained';                  %Stimuli definition for experiment 1:
@@ -147,9 +157,9 @@ inputs.exps.error_data{2}=[
  inputs.exps.u_min{3}=0*ones(1,inputs.exps.n_steps{3});
  inputs.exps.u_max{3}=1*ones(1,inputs.exps.n_steps{3});% Minimum and maximum value for the input
  inputs.exps.tf_type{3}='fixed';                       % [] Type of experiment duration: 'fixed'(default) | 'od' (to be designed) 
- inputs.exps.t_f{3}=120;                               % Experiment duration
+ inputs.exps.t_f{3}=480;                               % Experiment duration
  inputs.exps.ts_type{3}='fixed';                       % [] Type of sampling times: 'fixed'(default) | 'od' (to be designed) 
- inputs.exps.n_s{3}=20;
+ inputs.exps.n_s{3}=25;
  inputs.exps.std_dev{3}=0.1;                           % Standard deviation of the noise for each experiment: Ex: 0.05 <=> 5%
 
 
@@ -168,7 +178,7 @@ inputs.PEsol.global_theta_guess=inputs.model.par;
 % COST FUNCTION RELATED DATA
 %==================================    
 
- inputs.exps.noise_type='hetero';                    % Type of experimental noise: 'homo' |'homo_var'| 'hetero'     
+ inputs.exps.noise_type='homo_var';                    % Type of experimental noise: 'homo' |'homo_var'| 'hetero'     
  inputs.OEDsol.OEDcost_type='Eopt';                % FIM based criterium: 'Dopt'|'Eopt'|'Aopt'|'Emod'|'DoverE'
  
  
@@ -177,6 +187,8 @@ inputs.PEsol.global_theta_guess=inputs.model.par;
 %==================================
 %
 % SIMULATION
+
+ inputs.ivpsol.senssolver='fdsens2';
 
  inputs.ivpsol.rtol=1.0D-7;                            % [] IVP solver integration tolerances
  inputs.ivpsol.atol=1.0D-7; 
