@@ -10,7 +10,7 @@ plot(out(:,1),out(:,2));
 axis([0 3000 0 0.05])
 pause
 hold on
-u=repmat([1 0],[1 int8(length(tt)/2)+1])
+u=repmat([1 0],[1 int8((length(tt)-1)/2)])
 for i=1:length(tt)-1
     fprintf('Da %d a %d \n',tt(i),tt(i+1));
     sol = dde23(@(t,sol,Z) IRMA5b(t,sol,Z,K,u(i)), [100] ,y0,[tt(i) tt(i+1)]);out=[sol.x;sol.y]';plot(out(:,1),out(:,2));axis([0 3000 0 0.05])
