@@ -1,5 +1,5 @@
 %irma_model
-%Irma for AMIGO as per the codes 
+%Irma for AMIGO as per the codes  written by Gianfranco Fiore
 %The basic model of irma for AMIGO analysis containing path and input reated data.
 
 %======================
