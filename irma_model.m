@@ -1,3 +1,6 @@
+%irma_model
+%Irma for AMIGO as per the codes 
+%The basic model of irma for AMIGO analysis containing path and input reated data.
 
 %======================
 % PATHS RELATED DATA
