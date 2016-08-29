@@ -3,7 +3,7 @@
 % PATHS RELATED DATA
 %======================
 
-inputs.pathd.results_folder='irma_13Aug_Thesis';         % Folder to keep results (in Results) for a given problem          
+inputs.pathd.results_folder='irma';         % Folder to keep results (in Results) for a given problem          
 inputs.pathd.short_name='IRMA_Model_Analysis';                      % To identify figures and reports for a given problem   
 
 %======================
