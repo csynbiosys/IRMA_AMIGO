@@ -1,11 +1,4 @@
 irma_model  %Loads model related data
-%======================
-%PATHS RELATED DATA
-%======================
-
-inputs.pathd.results_folder='irma_res_Thesis';         % Folder to keep results (in Results) for a given problem          
-inputs.pathd.short_name='irma';                      % To identify figures and reports for a given problem   
-
 
 %==================================
 % EXPERIMENTAL SCHEME RELATED DATA
